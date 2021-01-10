@@ -9,8 +9,9 @@ services:
     env_file:
       - ".env"
     environment:
-      - "PAYMENT_API"
+      - "PAYMENT_API=http://localhost:5000"
     links:
       - payment
     ports:
       - "127.0.0.1:8000:8000"
+

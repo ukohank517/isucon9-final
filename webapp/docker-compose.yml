@@ -22,7 +22,7 @@ services:
     env_file:
       - ".env"
     volumes:
-      - mysql:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d
       - ./mysql/conf.d:/etc/mysql/conf.d
     # development only
@@ -40,6 +40,8 @@ services:
       - run
       - main.go
     working_dir: /go/src/payment
+    ports:
+      - "5099:5000"
     env_file:
       - ".env"
 
