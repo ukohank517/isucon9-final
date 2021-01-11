@@ -22,7 +22,7 @@ services:
     env_file:
       - ".env"
     volumes:
-      - ./mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d
       - ./mysql/conf.d:/etc/mysql/conf.d
     # development only
